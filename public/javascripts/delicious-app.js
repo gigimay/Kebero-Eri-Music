@@ -6,11 +6,9 @@ typeAhead( $('.search'));
 
 
 //****audio play button pour faire que play mais pas pause****//
+
 var status = false;
 var playproperty = document.getElementsByClassName('playproperty');
-
-// console.log('coucou', playimage);
-
 
 playproperty[0].addEventListener('click', function audioHandler(e) {
   e.preventDefault();
