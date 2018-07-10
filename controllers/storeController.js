@@ -8,7 +8,6 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const multerOptions = {
-  // dest: './public/uploads/allsnaps',
   storage: multer.memoryStorage(),
   fileFilter: function(req, file, next){
     const isPhoto = file.mimetype.startsWith('image/')//- verifying the type of image
@@ -26,15 +25,6 @@ exports.upload = multer(multerOptions).fields([
   { name: 'photo', maxCount: 1 },
   { name: 'audio', maxCount: 1 }
 ])
-
-//- just saves the file temporarly it's like ROM
-
-// exports.readfile = (req, res) => {
-//   fs.readFile(path.join(__dirname, 'music.json'), 'utf8', function(err, music) {
-//     if(err) throw err;
-//     res.json(JSON.parse(music));
-//   })
-// }
 
 exports.postmusic = async (req, res, next) => {
   if (!req.files.audio){

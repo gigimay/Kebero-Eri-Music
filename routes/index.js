@@ -18,14 +18,6 @@ router.post('/add',
  catchErrors(storeController.createStore)
 );
 
-// router.get('/musicstore',
-//   storeController.readfile
-// )
-
-// router.get('/musicstore/:id',
-// storeController.uploadaudio
-// )
-
 router.post('/add/:id',
 storeController.upload,
 catchErrors(storeController.postmusic),
