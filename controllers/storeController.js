@@ -41,14 +41,6 @@ exports.postmusic = async (req, res, next) => {
 
 }
 
-
-// exports.uploadaudio = (req, res) => {
-//   // const music = path.join(__dirname, 'musicstore', req.params.id);
-//   const music = path.join('public/uploads/allsnaps', req.params.id);
-//   // console.log(req.params.number);
-//   mediaserver.pipe(req, res, music);
-// }
-
 exports.resize = async ( req, res, next) =>{
   // check if there is no file to resize
   // console.log(req.files);
