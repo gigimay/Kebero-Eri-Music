@@ -2660,11 +2660,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
 
 //****audio play button pour faire que play mais pas pause****//
+
 var status = false;
 var playproperty = document.getElementsByClassName('playproperty');
-
-// console.log('coucou', playimage);
-
 
 playproperty[0].addEventListener('click', function audioHandler(e) {
   e.preventDefault();
