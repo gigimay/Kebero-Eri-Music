@@ -1,11 +1,12 @@
 doctype html
 html
   head
-    title= `${title} | ${h.siteName}`
+    title= `${title} | ${help.siteName}`
     link(rel='stylesheet', href='/dist/style.css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
     block styles 
       link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
+      link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
       
   body
     block header
@@ -18,17 +19,17 @@ html
                   span.icon-bar
                   span.icon-bar
                   span.icon-bar
-                a.navbar-brand(href='/') Koboro-Eri-Music
+                a.navbar-brand(href='/') Kebero-Eri-Music
               .navbar-collapse.collapse
                 ul.nav.navbar-nav
-                  each item in h.menu
+                  each item in help.menu
                     li.active
                       a(href=item.slug)
                         span #{item.title}
                 form.navbar-form.navbar-left
                   .form-group
                     .search
-                      input.search__input.form-control(type="text" placeholder="Search your music ..." name="search")
+                      input.search__input.form-control(type="text" placeholder="Search your music ..." name="search" autocomplete="off")
                       .search__results
                 
                 ul.nav.navbar-nav.navbar-right 
@@ -38,7 +39,7 @@ html
                     li
                       a(href='/Logout') Log Out
                     li
-                      a(href='/Account')
+                      a(href='/Account' style="padding: 0;")
                         img.avatar(src=user.gravatar + 'd=retro')
                   else
                     li

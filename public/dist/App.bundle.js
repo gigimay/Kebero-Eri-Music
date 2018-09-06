@@ -2664,26 +2664,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var status = false;
 var playproperty = document.getElementsByClassName('playproperty');
 
-playproperty[0].addEventListener('click', function audioHandler(e) {
-  e.preventDefault();
+if (playproperty.length) {
+  playproperty[0].addEventListener('click', function audioHandler(e) {
+    e.preventDefault();
 
-  var elm = e.target;
-  var audio = document.getElementsByClassName('audiocontrols')[0];
+    var elm = e.target;
+    var audio = document.getElementsByClassName('audiocontrols')[0];
 
-  console.log('hello', audio);
+    console.log('hello', audio);
 
-  var source = document.getElementsByClassName('audiosource')[0];
-  source.elm = elm.getAttribute('data-value');
-  console.log('bye', source);
+    var source = document.getElementsByClassName('audiosource')[0];
+    source.elm = elm.getAttribute('data-value');
+    console.log('bye', source);
 
-  if (status == false || audio.paused) {
-    audio.play();
-    status = true;
-  } else {
-    audio.pause();
-    status = false;
-  }
-});
+    if (status == false || audio.paused) {
+      audio.play();
+      status = true;
+    } else {
+      audio.pause();
+      status = false;
+    }
+  });
+}
 
 /***/ })
 /******/ ]);

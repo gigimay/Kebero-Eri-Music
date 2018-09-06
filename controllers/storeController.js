@@ -3,9 +3,8 @@ const Store = mongoose.model('Store'); // coz mongoose use a concept called sing
 const multer = require('multer');//- uses for uploading file
 const jimp = require('jimp')//- uses for resize photos
 const uuid = require('uuid');//- make file names unique
-const mediaserver = require('mediaserver');
 const fs = require('fs-extra');
-const path = require('path');
+
 
 const multerOptions = {
   storage: multer.memoryStorage(),
@@ -28,10 +27,11 @@ exports.upload = multer(multerOptions).fields([
 
 exports.postmusic = async (req, res, next) => {
   if (!req.files.audio){
-    next();
-    return;
-    // req.flash('error', 'you must supply an audio')
-    // res.redirect('/add')
+    // next();
+    // return;
+    req.flash('error', 'You must supply an audio!!')
+    res.redirect('back');
+
   }
   const extension = req.files.audio[0].originalname.split('.')[1]
   req.body.audio = `${uuid.v4()}.${extension}`;
@@ -71,7 +71,7 @@ exports.createStore = async (req, res) => {
 
 exports.musicStore = async (req, res) => {
   const page = req.params.page || 1;
-  const limit = 6;
+  const limit = 8;
   const skip = (page * limit) - limit;
   //query the database for a list of all stores
   const storesPromise = Store
@@ -87,7 +87,6 @@ exports.musicStore = async (req, res) => {
     res.redirect(`/musicStore/page/${pages}`)
     return;
   }
-
   res.render('musicStore', {title: 'Music Store', musicStore, page, pages, count})
 };
 
@@ -118,7 +117,8 @@ exports.updateStore = async (req, res) => {
 
 exports.deleteStore = async (req, res) => {
   const store = await Store.findOneAndRemove({ _id: req.params.id}).exec();
-  res.redirect('/musicStore')
+  res.redirect('back')
+
 }
 
 exports.getStoreBySlug = async (req, res, next) => {

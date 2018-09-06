@@ -18,12 +18,12 @@ exports.dump = (obj) => JSON.stringify(obj, null, 2);
 exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Some details about the site
-exports.siteName = `Koboro-Eri-Music`;
+exports.siteName = `Habesha-Music`;
 
 exports.menu = [
   { slug: '/musicStore', title: 'MusicStore', icon: 'store' },
   { slug: '/tags', title: 'Tags', icon: 'tag' },
   { slug: '/top', title: 'Top', icon: 'top' },
   { slug: '/add', title: 'Add', icon: 'add' },
-  { slug: '/contact-us', title: 'Our-Address', icon: 'location'}
+  { slug: '/contact-us', title: 'Contact', icon: 'location'}
 ];
