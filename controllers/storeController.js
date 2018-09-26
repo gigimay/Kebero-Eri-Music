@@ -27,15 +27,14 @@ exports.upload = multer(multerOptions).fields([
 
 exports.postmusic = async (req, res, next) => {
   if (!req.files.audio){
-    // next();
-    // return;
     req.flash('error', 'You must supply an audio!!')
     res.redirect('back');
-
   }
+
+  // console.log(req.files.audio);
   const extension = req.files.audio[0].originalname.split('.')[1]
   req.body.audio = `${uuid.v4()}.${extension}`;
-  // console.log(req.files.audio);
+
   await fs.writeFile(`./public/uploads/allsnaps/${req.body.audio}`, req.files.audio[0].buffer);
   next();
 
@@ -43,7 +42,6 @@ exports.postmusic = async (req, res, next) => {
 
 exports.resize = async ( req, res, next) =>{
   // check if there is no file to resize
-  // console.log(req.files);
   if (!req.files.photo){
     next();
     return;
@@ -71,7 +69,7 @@ exports.createStore = async (req, res) => {
 
 exports.musicStore = async (req, res) => {
   const page = req.params.page || 1;
-  const limit = 8;
+  const limit = 10;
   const skip = (page * limit) - limit;
   //query the database for a list of all stores
   const storesPromise = Store

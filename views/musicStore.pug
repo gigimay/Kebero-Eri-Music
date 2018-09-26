@@ -4,9 +4,9 @@ include mixins/musicCard
 include mixins/paginationCard
 
 block content
-  .container          
+  .container-fluid          
     .jumbotron
-      h2= title
+      h2.musicStoreTitle= title
       .musicStore
         each store in musicStore
           +musicCard(store)

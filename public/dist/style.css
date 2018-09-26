@@ -469,15 +469,12 @@ p {
 .title {
   word-wrap: break-word;
   position: relative;
+  font-size: 20px;
   z-index: 2;
   margin: 0;
-  z-index: 2;
-  line-height: 1.1;
-  /* -ms-transform: skew(0, -3deg);
-      transform: skew(0, -3deg); */
   line-height: 1.1; }
   .title--long {
-    font-size: 30px; }
+    font-size: 10px; }
   .title:before {
     content: '';
     width: 50px;
@@ -651,7 +648,9 @@ label {
     margin-left: 2rem;
   }
 }
-
+.musicStoreTitle{
+  margin-top: 0;
+}
 .table {
   width: 100%; }
   .table td {
@@ -674,7 +673,7 @@ label {
 .store {
   background: white;
   margin: 1.25em 0 0 1.25em;
-  width: calc(25% - 1.25em);
+  width: calc(20% - 1.25em);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); }
   .store--wide {
     width: 100%; }

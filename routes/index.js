@@ -20,7 +20,6 @@ router.post('/add',
 
 router.post('/add/:id',
 storeController.upload,
-catchErrors(storeController.postmusic),
 catchErrors(storeController.resize),
 catchErrors(storeController.updateStore)
 );
