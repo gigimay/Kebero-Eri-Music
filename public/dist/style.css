@@ -625,6 +625,9 @@ label {
   .paginationCard{
     flex-direction: column;
   }
+  .rightbox{
+    display: none;
+  }
 }
 
 @media all and (max-width: 414px) {
@@ -646,6 +649,9 @@ label {
   }
   .tag{
     margin-left: 2rem;
+  }
+  .rightbox{
+    display: none;
   }
 }
 .musicStoreTitle{
@@ -670,6 +676,21 @@ label {
       flex-wrap: wrap;
   margin: -1.25em 0 0 -1.25em; }
 
+.sideMusicStore .store{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+.allboxes{
+  display: flex;
+  justify-content: space-around;
+}
+.leftbox{
+  width: 78%;
+}
+.rightbox{
+  width: 20%;
+}
 .store {
   background: white;
   margin: 1.25em 0 0 1.25em;

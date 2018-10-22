@@ -126,7 +126,9 @@ exports.getStoreBySlug = async (req, res, next) => {
     next()
     return;
   }
-  res.render('store', {store, title: store.name})
+  const allMusicInStorePage = await Store.find();
+
+  res.render('store', {store, title: store.name, allMusicInStorePage})
 }
 
 
