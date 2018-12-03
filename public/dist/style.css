@@ -710,21 +710,30 @@ label {
     .store {
       width: 100%; } }
 
+.name__actions {
+  display: flex
+}
+.singer__name {
+  width: 50%;
+}
 .store__actions {
-  position: relative;
-  z-index: 2;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  /* position: relative; */
+  /* z-index: 2; */
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
-  margin-bottom: 50px;
+  /* margin-bottom: 50px;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; */
+  width: 50%;
   display: -ms-flexbox;
   display: flex;
-  color: white;
+  /* color: white; */
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around; }
+      justify-content: space-around;
+
+}
 
 .delete__button {
   opacity: 0.3;
@@ -732,15 +741,23 @@ label {
 
 .store__action {
   display: flex;
-  width: 90px;
   justify-content: center;
   align-items: center;
-  font-size: 10px; }
+  font-size: 10px;
+  color: black
+}
   .store__action svg {
-    width: 30px;
-    fill: white; }
-  .store__action--edit a {
-    border-bottom: 0; }
+    width: 25px;
+    color: black;
+    margin: 0;
+    padding: 0;
+    /* fill: white; */
+  }
+  .store__action--edit a svg{
+    border: 0;
+    width: 25px;
+    color: black;
+  }
 
 .store__hero {
   position: relative;
@@ -1173,5 +1190,6 @@ pre.error {
    background: #ee3535;
  }
  .trigger-btn {
- 	display: inline-block;
+ 	/* display: inline-block; */
+  color: black;
  }
