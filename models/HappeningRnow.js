@@ -22,3 +22,5 @@ const HappeningRnowSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('HappeningRnow', HappeningRnowSchema);
+
+// not yet used model for chat to be continued .......
