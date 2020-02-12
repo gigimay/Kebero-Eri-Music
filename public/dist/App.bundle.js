@@ -3258,14 +3258,12 @@ if (playproperty.length) {
     var source = document.getElementsByClassName('audiosource')[0];
     source.elm = elm.getAttribute('data-value');
 
-    // var element = document.getElementsByClassName('toggleIt');
-
     if (status == false || audio.paused) {
       audio.play();
       status = true;
-      console.log('played', this.classList);
       this.classList.add('togglePlayImage');
       this.classList.remove('togglePauseImage');
+      console.log('played', this.classList);
     } else {
       audio.pause();
       status = false;
@@ -3275,10 +3273,6 @@ if (playproperty.length) {
     }
   });
 }
-
-// function theTogglePlayImage() {
-//   console.log('image toggled')
-// }
 
 /***/ })
 /******/ ]);
