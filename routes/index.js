@@ -53,6 +53,14 @@ authController.isLoggedIn,
 catchErrors(reviewController.addReview)
 );
 
+router.get('/chatroom/',
+authController.isLoggedIn,
+catchErrors(reviewController.getChatRoom)
+);
+
+
+router.get('/contact', catchErrors(storeController.contactMe));
+
 /*
   API
 */

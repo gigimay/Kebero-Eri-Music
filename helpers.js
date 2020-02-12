@@ -23,7 +23,7 @@ exports.siteName = `Habesha-Music`;
 exports.menu = [
   { slug: '/musicStore', title: 'MusicStore', icon: 'store' },
   { slug: '/tags', title: 'Tags', icon: 'tag' },
-  { slug: '/top', title: 'Top', icon: 'top' },
   { slug: '/add', title: 'Add', icon: 'add' },
-  { slug: '/contact-us', title: 'Contact', icon: 'location'}
+  { slug: '/chatroom', title: 'Chatroom' },
+  { slug: '/contact', title: 'Contact', }
 ];

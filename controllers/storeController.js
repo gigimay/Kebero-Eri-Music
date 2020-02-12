@@ -27,8 +27,10 @@ exports.upload = multer(multerOptions).fields([
 
 exports.postmusic = async (req, res, next) => {
   if (!req.files.audio){
-    req.flash('error', 'You must supply an audio!!')
-    res.redirect('back');
+    // req.flash('error', 'You must supply an audio!!')
+    // res.redirect('back');
+    next();
+    return;
   }
 
   // console.log(req.files.audio);
@@ -63,7 +65,11 @@ exports.addStore = (req, res) => {
 exports.createStore = async (req, res) => {
   req.body.author = req.user._id;
   const store = await(new Store(req.body)).save();
-  req.flash('success', `successfully created ${store.name}, care to leave a review for your music? we would appreciate that`);
+  if (req.files.audio) {
+    req.flash('success', `successfully created ${store.name}, care to leave review for your music? we would appreciate that`);
+  }else {
+    req.flash('success', `successfully created ${store.name}, care to leave detail for your initial openChat? we would appreciate that`);
+  }
   res.redirect(`/store/${store.slug}`);
 }
 
@@ -162,3 +168,7 @@ exports.searchStores = async (req, res) => {
   .limit(5)
     res.json(stores);
 };
+
+exports.contactMe = async (req, res) => {
+  res.render('contactMe', {title: 'Contact Me'})
+}

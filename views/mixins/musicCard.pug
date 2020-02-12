@@ -1,47 +1,34 @@
 mixin musicCard(store = {})
 
   .store
-    .store__hero
-      //- .store__actions
-      //-   if store.reviews 
-      //-     .store__action.store__action--count
-      //-       != help.icon('review')
-      //-       span= store.reviews.length
-      //- 
-      //-   if user && store.author.equals(user._id)
-      //-     .store__action.store__action--edit
-      //-       a(href=`/musicStore/${store._id}/edit`)
-      //-         != help.icon('pencil')
-      //-       a.trigger-btn(href=`#${store.id}` data-toggle="modal") 
-      //-         != help.icon('trash')
-            
-              
-      img(src=`/uploads/allsnaps/${store.photo || 'music.jpg'}`)
-      audio(src=`/uploads/allsnaps/${store.audio}`)
-      
-      
+    a(href=`/store/${store.slug}`)
+      .store__hero
+        img(src=`/uploads/allsnaps/${store.photo || 'music.jpg'}`)
+        audio(src=`/uploads/allsnaps/${store.audio}`)
+
+
     .store__details
       .name__actions
         .singer__name
           h2.title
             a(href=`/store/${store.slug}`) #{store.name.split(' ').slice(0, 2).join(' ')}
         .store__actions
-          if store.reviews 
+          if store.reviews
             .store__action.store__action--count
               != help.icon('review')
               span= store.reviews.length
-              
+
           if user && store.author.equals(user._id)
             .store__action.store__action--edit
               a(href=`/musicStore/${store._id}/edit`)
                 != help.icon('pencil')
-              a.trigger-btn(href=`#${store.id}` data-toggle="modal") 
+              a.trigger-btn(href=`#${store.id}` data-toggle="modal")
                 != help.icon('trash')
-       
+
       p.store__detailsp= store.description.split(' ').slice(0, 4).join(' ')
-  
-  
-      //- modal of confirm delete  
+
+
+      //- modal of confirm delete
       .modal.fade(id=`${store.id}`)
         div(class="modal-dialog modal-confirm")
           .modal-content

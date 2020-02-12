@@ -17,20 +17,29 @@ if (playproperty.length){
     var elm = e.target;
     var audio = document.getElementsByClassName('audiocontrols')[0];
 
-    console.log('hello', audio);
-
     var source = document.getElementsByClassName('audiosource')[0];
     source.elm = elm.getAttribute('data-value');
-    console.log('bye', source);
+
+    // var element = document.getElementsByClassName('toggleIt');
 
     if(status == false || audio.paused){
       audio.play();
       status = true;
+      console.log('played', this.classList);
+      this.classList.add('togglePlayImage');
+      this.classList.remove('togglePauseImage');
     }else{
       audio.pause();
       status = false;
+      this.classList.add('togglePauseImage');
+      this.classList.remove('togglePlayImage');
+      console.log('paused', this.classList);
     }
 
   });
 
 }
+
+// function theTogglePlayImage() {
+//   console.log('image toggled')
+// }
