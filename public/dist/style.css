@@ -1032,9 +1032,10 @@ label {
         .reviewer__stars input + label:hover, .reviewer__stars input + label:hover ~ label {
           color: #ffdd74; }
   .reviewer textarea {
+    font-family: initial;
     border: 0;
     outline: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 2rem;
     height: 100px; }
   .reviewer__meta {

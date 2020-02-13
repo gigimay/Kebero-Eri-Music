@@ -26,13 +26,11 @@ if (playproperty.length){
       status = true;
       this.classList.add('togglePlayImage');
       this.classList.remove('togglePauseImage');
-      console.log('played', this.classList);
     }else{
       audio.pause();
       status = false;
       this.classList.add('togglePauseImage');
       this.classList.remove('togglePlayImage');
-      console.log('paused', this.classList);
     }
 
   });
