@@ -1,5 +1,5 @@
 *.env
-.DS_Store
-node_modules/
-variables.env.now
-*public/uploads/allsnaps/
+*.DS_Store
+node_modules
+variables.env
+public/uploads/allsnaps/
